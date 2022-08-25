@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 import dotenv  from "dotenv"
-dotenv.config({ path: 'MONGO_URL' })
+dotenv.config()
 
 export const connectDB = async () => {
     try{
