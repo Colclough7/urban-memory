@@ -33,6 +33,6 @@ app.use('/', userRoutes)
 
 
 
-app.listen(PORT,()=> console.log(`server running on port http://localhost${PORT}`))
+app.listen(process.env.PORT,()=> console.log(`server running on port http://localhost${PORT}`))
 
 
