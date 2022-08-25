@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url'
 import userRoutes from './server/routes/router.js'
 import {connectDB} from './server/database/connection.js'
 const app = express()
-dotenv.config()
+dotenv.config({ path: 'ENV_FILENAME' })
 const PORT = process.env.PORT || 3000
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
