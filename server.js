@@ -7,11 +7,12 @@ import {dirname} from 'path'
 import { fileURLToPath } from 'url'
 import userRoutes from './server/routes/router.js'
 import {connectDB} from './server/database/connection.js'
+import cors from 'cors'
 const app = express()
 dotenv.config()
 const PORT = process.env.PORT || 3000
 const __dirname = dirname(fileURLToPath(import.meta.url))
-
+app.use(cors())
 connectDB()
 //log requests
 app.use(morgan('tiny'))
@@ -33,6 +34,6 @@ app.use('/', userRoutes)
 
 
 
-app.listen(process.env.PORT,()=> console.log(`server running on port http://localhost${PORT}`))
+app.listen(PORT,()=> console.log(`server running on port http://localhost:${PORT}`))
 
 
